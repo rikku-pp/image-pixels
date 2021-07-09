@@ -1,0 +1,111 @@
+/* this file is loaded by index.html and styles the page */
+
+body {
+  font-family: sans-serif;
+  margin: 2em auto;
+  padding: 0 1em;
+  line-height: 1.5em;
+  max-width: 1024px;
+}
+
+input {
+  border: 1px solid silver;
+  font-size: 16px;
+  padding: 5px;
+  min-height: 30px;
+}
+
+input[type="button"], 
+::-webkit-file-upload-button{
+  display: inline-block;
+  background-color: #bbbbf2;
+  border: 2px solid currentColor;
+  border-radius: .25em;
+  cursor: default;
+  line-height: 1.4em;
+  padding: 0.25em 1em;
+}
+
+input[type="color"], button {
+  border: 2px solid #eee;
+  border-radius: .25em;
+  padding: 2px;
+}
+
+input[type="file"] {
+  width: 85%;
+}
+
+input[type="text"] {
+  width: 90px;
+}
+
+input[type="button"]:hover:not([disabled="true"]), 
+::-webkit-file-upload-button:hover, 
+input[type="color"]:hover,
+button:hover {
+  cursor: pointer;
+  background-color: lavender;
+}
+
+button {
+  min-width: 34px;
+  min-height: 34px;
+}
+
+.image-size {
+  font-family: Tahoma, Terminal, ArialBlack, Arial, Helvetica;
+  font-size: 12px;
+}
+
+.two-columns {
+  width: 85%;
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.example-column {
+  text-align: center;
+  padding-left: 15px;
+}
+
+.color-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.color-picker {
+  margin-left: 20px;
+}
+
+#color-picker-canvas {
+}
+
+#canvas-expand-button {
+  display: none;
+}
+
+#add-color {
+  margin-top: 10px;
+}
+#add-color:hover {
+  cursor: pointer;
+  background-color: #f3f3f3;
+}
+
+.status {
+  padding-left: 10px;
+}
+
+.results {
+  width: 85%;
+  background-color: #fff8e0;
+  white-space: pre;
+  padding: 25px;
+  font-family: 'Courier New', Courier, monospace
+}
