@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="upload.js"></script>
+    <script src="file-select.js"></script>
+    <script src="color-select.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+  </head>
+
+  <body>
+    <h1>
+      Image to pixels
+    </h1>
+    <div>&nbsp;&mdash;&nbsp;generate Python code from image file. <a href="https://glitch.com/edit/#!/image-pixels?path=README.md%3A8%3A2">Read more</a></div>
+    <br />
+    <form id="upload_form" onsubmit="event.preventDefault();">
+      <div>
+        <div class="two-columns">
+          <div>
+            <label for="image_file">Please select image file</label> <br />
+            <input type="file" id="file" onchange="fileSelected();" /> <br />
+            <span id="image_size" class="image-size">&nbsp;</span>
+          </div>
+          <div class="example-column">
+            <div>or try an example image:</div>
+            <div>
+              <button>
+                <img
+                  id="giraffe"
+                  data-c1="#eee3d0"
+                  data-c2="#cfb198"
+                  data-c3="#8d4826"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Fgiraffe.gif?v=1604743389722"
+                />
+              </button>
+              <button>
+                <img
+                  id="g"
+                  data-c1="#eee3d0"
+                  data-c2="#cfb198"
+                  data-c3="#a77357"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Fgiraff.gif?v=1604740485553"
+                />
+              </button>
+
+              <button>
+                <img
+                  id="giraff"
+                  data-c1="#eee3d0"
+                  data-c2="#cfb198"
+                  data-c3="#a77357"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Fgiraff2.gif?v=1601116004171"
+                />
+              </button>
+              <button>
+                <img
+                  id="water"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Fwater-tile.png?v=1601115998597"
+                />
+              </button>
+            </div>
+            <div>
+              <button>
+                <img
+                  id="pixel_image"
+                  width="100%"
+                  height="100%"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Fpixels.gif?v=1600034987753"
+                />
+              </button>
+              <button>
+                <img
+                  id="tree_1"
+                  data-c1="#46b00c"
+                  data-c2="#3c7b37"
+                  data-c3="#834a2d"
+                  width="100%"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Ftree1.gif?v=1601403823049"
+                />
+              </button>
+              <button>
+                <img
+                  id="tree_2"
+                  data-c1="#46b00c"
+                  data-c2="#3c7b37"
+                  data-c3="#834a2d"
+                  width="100%"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Ftree2.gif?v=1601116024941"
+                />
+              </button>
+              <button>
+                <img
+                  id="tree_3"
+                  data-c1="#46b00c"
+                  data-c2="#3c7b37"
+                  data-c3="#834a2d"
+                  width="100%"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Ftree3.gif?v=1601116025034"
+                />
+              </button>
+              <button>
+                <img
+                  id="tree_4"
+                  data-c1="#46b00c"
+                  data-c2="#3c7b37"
+                  data-c3="#834a2d"
+                  width="100%"
+                  src="https://cdn.glitch.com/5805e526-4e5c-4380-9179-3551bb47df40%2Ftree4.gif?v=1601116024941"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <div>
+          <div>
+            Option: Color variables &ndash; for easy change in app
+          </div>
+        </div>
+        <div class="color-section">
+          <div class="color-variables">
+            <div id="add-color">
+              ➕ Add another
+            </div>
+          </div>
+          <div class="color-picker">
+            <canvas width="150" height="150" id="color-picker-canvas"></canvas>
+            <button id="canvas-expand-button">
+              expand
+            </button>
+          </div>
+        </div>
+        <div>
+          <br />
+          <label for="varname">Python variable name</label>
+          <input type="text" id="varname" value="large_matrix" />
+        </div>
+      </div>
+      <br />
+      <div class="two-columns">
+        <div>
+          <input
+            type="button"
+            value="⚙ Generate"
+            onclick="upload()"
+            id="action_button"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <span class="status" id="status_text">&nbsp;</span>
+        </div>
+      </div>
+      <br />
+      <div>
+        Resulting code:
+      </div>
+      <div>
+        <textarea class="results" id="results" rows="10">no results</textarea>
+      </div>
+    </form>
+  </body>
+</html>
