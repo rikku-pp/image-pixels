@@ -72,9 +72,7 @@ large_matrix = [ [ off for y in range( cols ) ] for x in range( rows ) ]
 def get_step(y, x):
   for i in range(y, y+8):
     for j in range(x, x+8):
-      if (is_inside_circle(i-y, j-x) == False  ):
-        m[i-y][j-x] = off
-      elif (large_matrix[i%rows][j%cols] != off):
+      if (large_matrix[i%rows][j%cols] != off):
         m[i-y][j-x] = large_matrix[i%rows][j%cols]
   return m
 
